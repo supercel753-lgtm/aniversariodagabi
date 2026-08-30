@@ -1,7 +1,9 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -9,138 +11,764 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background:
-        radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 25%),
-        radial-gradient(circle at 80% 30%, #ffd9ed 0%, transparent 30%),
-        linear-gradient(135deg, #eadcff, #ffe4ef);
+        linear-gradient(
+            135deg,
+            #fcecff,
+            #fff4f8,
+            #ffeaf3
+        );
 
-    color: #4b294f;
-
-    min-height: 100vh;
+    color: #4d304d;
 
     overflow-x: hidden;
 }
 
 
-/* ---------------- HERO ---------------- */
+/* ==========================================
+   CLASSES GERAIS
+========================================== */
 
-.hero {
+.escondido {
+    display: none !important;
+}
+
+.mini-titulo {
+    font-size: 0.85rem;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    color: #704f6e;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   TELA INICIAL
+========================================== */
+
+.tela-inicial {
     min-height: 100vh;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    padding: 40px 20px;
+    align-items: center;
+
+    padding: 25px;
 }
 
-.hero-card {
-    width: min(900px, 100%);
-
-    padding: 60px 40px;
+.intro-card {
+    width: min(800px, 100%);
 
     text-align: center;
 
-    background: rgba(255,255,255,0.82);
+    padding: 70px 30px;
 
-    border-radius: 35px;
+    border-radius: 0 0 60px 60px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
 
     box-shadow:
-        0 25px 70px rgba(100,50,100,0.18);
+        0 25px 60px rgba(120, 70, 120, 0.15);
 
     backdrop-filter: blur(10px);
 
     animation: aparecer 1s ease;
 }
 
-.small-title {
-    font-size: 15px;
+.intro-card h1 {
+    margin: 10px 0;
 
-    letter-spacing: 6px;
+    font-size: clamp(2.2rem, 6vw, 4rem);
 
-    font-weight: bold;
-
-    color: #795172;
-
-    margin-bottom: 20px;
+    color: #422344;
 }
 
-.hero h1 {
-    font-size: clamp(38px, 7vw, 68px);
+.intro-card p {
+    font-size: clamp(1rem, 3vw, 1.4rem);
 
-    margin-bottom: 20px;
+    color: #765c73;
 
-    color: #49294f;
+    margin: 25px 0 35px;
 }
 
-.hero p {
-    font-size: 23px;
-
-    line-height: 1.6;
-
-    color: #735b70;
-
-    margin-bottom: 35px;
-}
-
-
-.open-button {
+.intro-card button {
     border: none;
-
-    padding: 18px 38px;
 
     border-radius: 50px;
 
-    background: linear-gradient(
-        135deg,
-        #ed4d93,
-        #bb45df
-    );
+    padding: 18px 40px;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
 
     color: white;
 
-    font-size: 18px;
-
-    font-weight: bold;
+    background:
+        linear-gradient(
+            135deg,
+            #e9679c,
+            #c94d87
+        );
 
     cursor: pointer;
 
     box-shadow:
-        0 15px 35px rgba(200,60,150,0.3);
+        0 15px 30px rgba(210, 80, 140, 0.25);
 
     transition: 0.3s;
 }
 
-.open-button:hover {
+.intro-card button:hover {
     transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 20px 35px rgba(210, 80, 140, 0.35);
 }
 
-.click-text {
-    margin-top: 20px;
+.intro-card small {
+    display: block;
 
-    color: #92748e;
+    margin-top: 18px;
+
+    color: #987f95;
 }
 
 
-/* ---------------- CONTEÚDO ---------------- */
+/* ==========================================
+   HERO
+========================================== */
 
-.content {
-    width: min(1100px, 94%);
+.hero {
+    text-align: center;
 
-    margin: 0 auto;
+    padding: 80px 20px 50px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 7vw, 4.5rem);
+
+    margin: 5px 0 10px;
+
+    color: #402343;
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+
+    color: #71576f;
+}
+
+
+/* ==========================================
+   MENSAGEM
+========================================== */
+
+.mensagem {
+    width: min(850px, calc(100% - 40px));
+
+    margin: 30px auto 100px;
+
+    padding: 50px;
+
+    background: rgba(255,255,255,0.75);
+
+    border-radius: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(100, 50, 100, 0.1);
+}
+
+.coracao {
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+.mensagem h2 {
+    color: #47294a;
+
+    font-size: 2rem;
+}
+
+.mensagem p {
+    color: #6e596c;
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   GALERIA
+========================================== */
+
+.galeria-section {
+    text-align: center;
+
+    padding: 30px 20px 100px;
+}
+
+.galeria-section h2 {
+    font-size: 2.4rem;
+
+    color: #47294a;
+}
+
+.galeria-section > p {
+    color: #765e74;
+
+    margin-bottom: 40px;
+}
+
+.galeria {
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.foto-card {
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 30px rgba(100, 50, 100, 0.15);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.foto-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(1deg);
+}
+
+.foto-card img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   BOLO
+========================================== */
+
+.bolo-section {
+    text-align: center;
+
+    padding: 80px 20px 120px;
+
+    overflow: hidden;
+}
+
+.bolo-section h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    color: #49294c;
+
+    margin: 5px 0 10px;
+}
+
+.instrucao {
+    color: #7b6077;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 60px;
+}
+
+
+/* ==========================================
+   ÁREA DO BOLO
+========================================== */
+
+.cake-area {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    width: 100%;
+
+    min-height: 390px;
+}
+
+.cake {
+    position: relative;
+
+    width: 460px;
+
+    height: 350px;
+
+    margin-top: 100px;
+}
+
+
+/* ==========================================
+   TOPO
+========================================== */
+
+.cake-top {
+    position: absolute;
+
+    width: 460px;
+
+    height: 130px;
+
+    top: 55px;
+
+    left: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd7e5,
+            #ffb4cd
+        );
+
+    box-shadow:
+        inset 0 -10px 15px rgba(255,255,255,0.4),
+        0 15px 30px rgba(160,70,110,0.15);
+
+    z-index: 5;
+}
+
+
+/* ==========================================
+   CREME
+========================================== */
+
+.cream {
+    position: absolute;
+
+    width: 75px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #fff5f7;
+
+    box-shadow:
+        0 4px 7px rgba(150,70,100,0.1);
+}
+
+.cream1 {
+    left: 35px;
+    top: 47px;
+}
+
+.cream2 {
+    left: 115px;
+    top: 67px;
+}
+
+.cream3 {
+    left: 195px;
+    top: 73px;
+}
+
+.cream4 {
+    left: 275px;
+    top: 65px;
+}
+
+.cream5 {
+    left: 350px;
+    top: 45px;
+}
+
+
+/* ==========================================
+   CORPO
+========================================== */
+
+.cake-body {
+    position: absolute;
+
+    left: 15px;
+
+    top: 110px;
+
+    width: 430px;
+
+    height: 165px;
+
+    border-radius:
+        0 0 40px 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff0df,
+            #ffe5d0,
+            #fff0df
+        );
+
+    box-shadow:
+        inset 0 -10px 15px rgba(190,110,100,0.12),
+        0 15px 25px rgba(130,70,90,0.15);
+
+    z-index: 4;
+}
+
+
+/* ==========================================
+   COBERTURA ESCORRENDO
+========================================== */
+
+.drip {
+    position: absolute;
+
+    top: -5px;
+
+    background: #f486a9;
+
+    width: 60px;
+
+    border-radius:
+        0 0 30px 30px;
+}
+
+.drip1 {
+    left: 35px;
+    height: 70px;
+}
+
+.drip2 {
+    left: 115px;
+    height: 95px;
+}
+
+.drip3 {
+    left: 200px;
+    height: 62px;
+}
+
+.drip4 {
+    left: 285px;
+    height: 88px;
+}
+
+.drip5 {
+    left: 355px;
+    height: 65px;
+}
+
+
+/* ==========================================
+   CORAÇÕES
+========================================== */
+
+.heart {
+    position: absolute;
+
+    color: #ed6392;
+
+    font-size: 25px;
+}
+
+.heart1 {
+    left: 65px;
+    top: 85px;
+}
+
+.heart2 {
+    left: 170px;
+    top: 110px;
+}
+
+.heart3 {
+    left: 280px;
+    top: 75px;
+}
+
+.heart4 {
+    left: 355px;
+    top: 105px;
+}
+
+
+/* ==========================================
+   BASE
+========================================== */
+
+.cake-base {
+    position: absolute;
+
+    width: 450px;
+
+    height: 40px;
+
+    left: 5px;
+
+    bottom: 20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            #ffb5ca,
+            #e98ba8
+        );
+
+    box-shadow:
+        0 12px 20px rgba(110,50,80,0.2);
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   VELAS
+========================================== */
+
+.candle {
+    position: absolute;
+
+    width: 130px;
+
+    height: 170px;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+.candle2 {
+    left: 115px;
+    top: -115px;
+}
+
+.candle7 {
+    left: 220px;
+    top: -115px;
+}
+
+
+/* ==========================================
+   NÚMEROS
+========================================== */
+
+.number {
+    position: absolute;
+
+    left: 50%;
+
+    top: 45px;
+
+    transform: translateX(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 110px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: #f36c99;
+
+    -webkit-text-stroke:
+        4px #ffd5a4;
+
+    text-shadow:
+        2px 4px 0 #d47a88,
+        0 7px 15px rgba(100,40,70,0.2);
+}
+
+
+/* ==========================================
+   PAVIO
+========================================== */
+
+.wick {
+    position: absolute;
+
+    width: 5px;
+
+    height: 22px;
+
+    top: 24px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #4a3029;
+
+    border-radius: 5px;
+
+    z-index: 4;
+}
+
+
+/* ==========================================
+   CHAMA
+========================================== */
+
+.flame {
+    position: absolute;
+
+    width: 24px;
+
+    height: 38px;
+
+    top: -12px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    background: #ffad27;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    box-shadow:
+        0 0 12px #ff9e00,
+        0 0 25px rgba(255,150,0,0.7);
+
+    animation:
+        chama 0.7s infinite alternate;
+
+    z-index: 6;
+}
+
+.flame::after {
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+
+    height: 19px;
+
+    left: 7px;
+
+    top: 10px;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background: #fff6b0;
+}
+
+
+@keyframes chama {
+
+    from {
+        transform:
+            translateX(-50%)
+            rotate(42deg)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(48deg)
+            scale(1.08);
+    }
+
+}
+
+
+/* ==========================================
+   VELA APAGADA
+========================================== */
+
+.candle.apagada .flame {
+    display: none;
+}
+
+.candle.apagada .wick {
+    background: #222;
+}
+
+
+/* ==========================================
+   MENSAGEM FINAL
+========================================== */
+
+.mensagem-final {
+    width: min(700px, calc(100% - 40px));
+
+    margin: 40px auto 0;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 20px 50px rgba(100,50,100,0.12);
 
     opacity: 0;
 
-    transform: translateY(40px);
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 
     pointer-events: none;
-
-    transition: 1s ease;
 }
 
-.content.show {
+.mensagem-final.mostrar {
     opacity: 1;
 
     transform: translateY(0);
@@ -148,415 +776,66 @@ body {
     pointer-events: auto;
 }
 
-
-.message-card,
-.photos-section,
-.final-card {
-    background: rgba(255,255,255,0.82);
-
-    border-radius: 35px;
-
-    padding: 55px;
-
-    margin-bottom: 35px;
-
-    box-shadow:
-        0 20px 60px rgba(100,50,100,0.12);
-
-    text-align: center;
+.final-emoji {
+    font-size: 3rem;
 }
 
+.mensagem-final h2 {
+    color: #e34f8b;
 
-.message-card h2,
-.photos-section h2,
-.final-message h2 {
-    font-size: 38px;
-
-    margin-bottom: 25px;
-
-    color: #5a315d;
+    font-size: 2rem;
 }
 
-.message-card p {
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    margin: 15px auto;
-
-    max-width: 800px;
-
-    color: #674e63;
-}
-
-
-/* ---------------- FOTOS ---------------- */
-
-.photos-section h2 {
-    margin-bottom: 5px;
-}
-
-.heart-divider {
-    color: #df5799;
-
-    margin-bottom: 30px;
-
-    font-size: 20px;
-}
-
-.photo-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 15px;
-
-    max-width: 950px;
-
-    margin: auto;
-}
-
-.photo-grid img {
-    width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 8px 20px rgba(70,40,70,0.18);
-
-    transition: 0.35s;
-
-    cursor: pointer;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.04) rotate(1deg);
-
-    box-shadow:
-        0 15px 30px rgba(70,40,70,0.25);
-}
-
-
-/* ---------------- FINAL ---------------- */
-
-.final-card {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 50px;
-
-    text-align: left;
-
-    overflow: hidden;
-}
-
-.final-message {
-    flex: 1;
-}
-
-.final-message h2 {
-    font-size: 40px;
-}
-
-.final-message p {
-    font-size: 18px;
+.mensagem-final p {
+    color: #6e596c;
 
     line-height: 1.7;
 
-    margin-bottom: 16px;
-
-    color: #674e63;
+    font-size: 1.05rem;
 }
 
-.final-message h3 {
-    color: #df4d91;
-
-    font-size: 23px;
+.mensagem-final strong {
+    display: block;
 
     margin-top: 25px;
-}
 
-.signature {
-    font-style: italic;
+    color: #d94683;
 
-    font-size: 22px !important;
-
-    margin-top: 30px;
+    font-size: 1.2rem;
 }
 
 
-/* ---------------- BOLO ---------------- */
-
-.cake-area {
-    flex: 1;
-
-    min-height: 400px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.candle-instruction {
-    color: #d24b91;
-
-    font-weight: bold;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-}
-
-.cake {
-    width: 330px;
-
-    height: 280px;
-
-    position: relative;
-
-    margin-top: 35px;
-}
-
-
-/* velas */
-
-.number-candle {
-    position: absolute;
-
-    top: -25px;
-
-    z-index: 5;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    transition: 0.3s;
-}
-
-.candle-2 {
-    left: 90px;
-}
-
-.candle-7 {
-    left: 165px;
-}
-
-.number {
-    font-family: Georgia, serif;
-
-    font-size: 92px;
-
-    font-weight: bold;
-
-    color: #ef799f;
-
-    text-shadow:
-        2px 3px 0 #d85c86,
-        4px 5px 10px rgba(0,0,0,0.15);
-
-    line-height: 1;
-}
-
-.flame {
-    position: absolute;
-
-    top: -45px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-size: 30px;
-
-    animation: flame 0.8s infinite alternate;
-}
-
-.number-candle.off .flame {
-    display: none;
-}
-
-.number-candle.off {
-    filter: grayscale(0.3);
-
-    opacity: 0.7;
-}
-
-
-/* topo */
-
-.cake-top {
-    position: absolute;
-
-    bottom: 95px;
-
-    left: 0;
-
-    width: 330px;
-
-    height: 70px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #ffb4c9,
-            #ff91b1
-        );
-
-    border: 5px solid #ff7fa5;
-
-    z-index: 2;
-}
-
-.sprinkles {
-    text-align: center;
-
-    padding-top: 20px;
-
-    color: #fff;
-
-    letter-spacing: 7px;
-}
-
-
-/* corpo */
-
-.cake-body {
-    position: absolute;
-
-    bottom: 25px;
-
-    left: 20px;
-
-    width: 290px;
-
-    height: 110px;
-
-    background:
-        linear-gradient(
-            to right,
-            #ff9fb8,
-            #ffb2c7,
-            #ff91af
-        );
-
-    border-radius:
-        10px 10px 25px 25px;
-
-    border: 4px solid #f37e9f;
-
-    z-index: 1;
-
-    box-shadow:
-        inset 0 -15px rgba(220,80,120,0.12);
-}
-
-.cake-decoration {
-    text-align: center;
-
-    padding-top: 38px;
-
-    color: white;
-
-    letter-spacing: 10px;
-
-    font-size: 20px;
-}
-
-
-/* prato */
-
-.plate {
-    position: absolute;
-
-    bottom: 5px;
-
-    left: -10px;
-
-    width: 350px;
-
-    height: 35px;
-
-    background: #fff;
-
-    border-radius: 50%;
-
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.12);
-}
-
-.cake-message {
-    margin-top: 15px;
-
-    color: #9a5c83;
-
-    font-weight: bold;
-}
-
-
-/* ---------------- BOTÃO MÚSICA ---------------- */
-
-.music-button {
-    position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    width: 60px;
-
-    height: 60px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: white;
-
-    font-size: 26px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 30px rgba(70,40,70,0.2);
-
-    z-index: 100;
-}
-
-
-/* ---------------- FOOTER ---------------- */
+/* ==========================================
+   FOOTER
+========================================== */
 
 footer {
     text-align: center;
 
-    padding: 30px;
+    padding: 40px 20px 60px;
 
-    color: #815a7b;
+    color: #80677c;
+}
 
-    font-size: 16px;
+footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 1.3rem;
 }
 
 
-/* ---------------- ANIMAÇÕES ---------------- */
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
 
 @keyframes aparecer {
 
     from {
         opacity: 0;
 
-        transform: translateY(30px);
+        transform: translateY(25px);
     }
 
     to {
@@ -567,67 +846,50 @@ footer {
 
 }
 
-@keyframes flame {
 
-    from {
-        transform:
-            translateX(-50%)
-            scale(1);
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 700px) {
+
+    .intro-card {
+        padding: 50px 20px;
     }
 
-    to {
-        transform:
-            translateX(-50%)
-            scale(1.15);
-    }
-
-}
-
-
-/* ---------------- CELULAR ---------------- */
-
-@media (max-width: 800px) {
-
-    .hero-card {
-        padding: 40px 25px;
-    }
-
-    .message-card,
-    .photos-section,
-    .final-card {
+    .mensagem {
         padding: 30px 20px;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .galeria {
+        grid-template-columns:
+            repeat(2, 1fr);
 
-    .final-card {
-        flex-direction: column;
-    }
-
-    .final-message {
-        text-align: center;
+        gap: 12px;
     }
 
     .cake {
-        transform: scale(0.85);
+        transform: scale(0.72);
+
+        transform-origin:
+            center bottom;
+
+        margin-top: 70px;
+
+        margin-bottom: -70px;
+    }
+
+    .bolo-section {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
 }
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
 
-    .small-title {
-        letter-spacing: 3px;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h1 {
-        font-size: 38px;
+    .galeria {
+        grid-template-columns: 1fr;
     }
 
 }

@@ -1,205 +1,208 @@
-const openButton = document.getElementById("openButton");
-const conteudo = document.getElementById("conteudo");
-
-const musica = document.getElementById("musica");
-const musicButton = document.getElementById("musicButton");
-
-const candles = document.querySelectorAll(".number-candle");
-const cakeMessage = document.getElementById("cakeMessage");
-
-let musicaTocando = false;
+/* ==========================================
+   SITE DE ANIVERSÁRIO
+========================================== */
 
 
-/* --------------------------------
-   ABRIR PRESENTE
--------------------------------- */
+/* ==========================================
+   ELEMENTOS
+========================================== */
 
-openButton.addEventListener("click", async () => {
+const botaoAbrir =
+    document.getElementById("abrirSurpresa");
 
-    conteudo.classList.add("show");
+const telaInicial =
+    document.getElementById("inicio");
 
-    openButton.textContent = "💖 Presente aberto! 💖";
+const conteudo =
+    document.getElementById("conteudo");
 
-    openButton.disabled = true;
+const musica =
+    document.getElementById("musica");
 
-    /*
-       O navegador permite iniciar o áudio
-       porque isso acontece depois do clique
-       da pessoa.
-    */
+const velas =
+    document.querySelectorAll(".candle");
 
-    try {
-
-        await musica.play();
-
-        musicaTocando = true;
-
-        musicButton.textContent = "🔊";
-
-    } catch (erro) {
-
-        console.log("Não foi possível iniciar a música:", erro);
-
-        musicButton.textContent = "▶️";
-
-    }
-
-    setTimeout(() => {
-
-        conteudo.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    }, 400);
-
-});
+const mensagemFinal =
+    document.getElementById("mensagemFinal");
 
 
-/* --------------------------------
-   BOTÃO DE MÚSICA
--------------------------------- */
+/* ==========================================
+   ABRIR SURPRESA
+========================================== */
 
-musicButton.addEventListener("click", async () => {
+botaoAbrir.addEventListener("click", () => {
 
-    if (musica.paused) {
+    /* Esconde a tela inicial */
 
-        try {
+    telaInicial.classList.add("escondido");
 
-            await musica.play();
+    /* Mostra o conteúdo */
 
-            musicaTocando = true;
+    conteudo.classList.remove("escondido");
 
-            musicButton.textContent = "🔊";
+    /* Tenta iniciar a música */
 
-        } catch (erro) {
+    musica.play().catch(() => {
 
-            console.log("Erro ao tocar música:", erro);
+        /*
+         * Alguns navegadores podem bloquear
+         * o áudio. Como o play aconteceu dentro
+         * de um clique do usuário, normalmente
+         * ele será permitido.
+         */
 
-        }
+        console.log(
+            "O navegador bloqueou a reprodução automática."
+        );
 
-    } else {
+    });
 
-        musica.pause();
+    /* Vai para o começo do conteúdo */
 
-        musicaTocando = false;
-
-        musicButton.textContent = "🔇";
-
-    }
-
-});
-
-
-/* --------------------------------
-   VELAS
--------------------------------- */
-
-candles.forEach(candle => {
-
-    candle.addEventListener("click", () => {
-
-        candle.classList.toggle("off");
-
-        const velasAcesas =
-            document.querySelectorAll(
-                ".number-candle:not(.off)"
-            );
-
-        if (velasAcesas.length === 0) {
-
-            cakeMessage.textContent =
-                "✨ Feliz 27! Faça um pedido! 🎂💖";
-
-            criarConfetes();
-
-        } else {
-
-            cakeMessage.textContent =
-                "Mais uma vela apagada! ✨";
-
-        }
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 
 });
 
 
-/* --------------------------------
-   CONFETES
--------------------------------- */
+/* ==========================================
+   VELAS
+========================================== */
 
-function criarConfetes() {
+velas.forEach((vela) => {
 
-    for (let i = 0; i < 35; i++) {
+    vela.addEventListener("click", () => {
 
-        const confete = document.createElement("div");
+        /* Se já estiver apagada, não faz nada */
 
-        confete.textContent =
-            ["💖", "✨", "💕", "🎉", "⭐"]
-            [Math.floor(Math.random() * 5)];
+        if (vela.classList.contains("apagada")) {
+            return;
+        }
 
-        confete.style.position = "fixed";
 
-        confete.style.left =
-            Math.random() * 100 + "vw";
+        /* Apaga a chama */
 
-        confete.style.top = "-30px";
+        vela.classList.add("apagada");
 
-        confete.style.fontSize =
-            (15 + Math.random() * 20) + "px";
 
-        confete.style.zIndex = "999";
+        /* Pequeno efeito de clique */
 
-        confete.style.pointerEvents = "none";
-
-        document.body.appendChild(confete);
-
-        const duracao =
-            2000 + Math.random() * 2500;
-
-        confete.animate(
+        vela.animate(
             [
                 {
-                    transform: "translateY(0) rotate(0deg)",
-                    opacity: 1
+                    transform: "scale(1)"
                 },
 
                 {
-                    transform:
-                        `translateY(110vh) rotate(720deg)`,
-                    opacity: 0
+                    transform: "scale(1.12)"
+                },
+
+                {
+                    transform: "scale(1)"
                 }
             ],
             {
-                duration: duracao,
-                easing: "ease-in",
-                fill: "forwards"
+                duration: 250,
+                easing: "ease-out"
             }
         );
 
-        setTimeout(() => {
 
-            confete.remove();
+        /* Confere quantas velas foram apagadas */
 
-        }, duracao);
-
-    }
-
-}
+        const apagadas =
+            document.querySelectorAll(
+                ".candle.apagada"
+            );
 
 
-/* --------------------------------
-   EFEITO NAS FOTOS
--------------------------------- */
+        /* Se as duas foram apagadas */
 
-const fotos = document.querySelectorAll(".photo-grid img");
+        if (apagadas.length === velas.length) {
 
-fotos.forEach(foto => {
+            mensagemFinal.classList.add("mostrar");
 
-    foto.addEventListener("click", () => {
 
-        foto.classList.toggle("foto-grande");
+            /* Leva suavemente até a mensagem */
+
+            setTimeout(() => {
+
+                mensagemFinal.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 400);
+
+        }
 
     });
 
 });
+
+
+/* ==========================================
+   FALLBACK PARA A MÚSICA
+========================================== */
+
+/*
+ * Se por algum motivo o navegador impedir
+ * a reprodução inicial, o primeiro clique
+ * em qualquer lugar da página tenta iniciar.
+ */
+
+document.addEventListener("click", () => {
+
+    if (
+        musica.paused &&
+        !telaInicial.classList.contains("escondido")
+    ) {
+        return;
+    }
+
+    if (musica.paused) {
+
+        musica.play().catch(() => {});
+
+    }
+
+});
+
+
+/* ==========================================
+   ERRO DAS FOTOS
+========================================== */
+
+/*
+ * Se alguma foto não carregar,
+ * o espaço fica visualmente discreto
+ * em vez de quebrar o layout.
+ */
+
+const fotos =
+    document.querySelectorAll(".foto-card img");
+
+fotos.forEach((foto) => {
+
+    foto.addEventListener("error", () => {
+
+        foto.style.display = "none";
+
+        foto.parentElement.classList.add(
+            "foto-sem-imagem"
+        );
+
+    });
+
+});
+
+
+/* ==========================================
+   CONSOLE
+========================================== */
+
+console.log(
+    "🎂 Site de aniversário carregado com sucesso!"
+);

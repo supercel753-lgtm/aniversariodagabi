@@ -1,543 +1,242 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Feliz Aniversário, Gabi! 💖</title>
+    <title>Feliz Aniversário, Gabi! 💕</title>
 
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #f8e8ff, #ffeaf4);
-            color: #402544;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: min(1000px, 92%);
-            margin: auto;
-            padding: 40px 0 80px;
-        }
-
-        /* =========================
-           ABERTURA
-        ========================= */
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-box {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 35px;
-            padding: 70px 30px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(70, 30, 80, 0.15);
-        }
-
-        .small-title {
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            color: #805b80;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: clamp(40px, 8vw, 72px);
-            line-height: 1.1;
-            margin-bottom: 25px;
-        }
-
-        .subtitle {
-            font-size: clamp(18px, 3vw, 23px);
-            color: #705b70;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto 35px;
-        }
-
-        .open-button {
-            border: none;
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(135deg, #ff6fae, #c86bff);
-            cursor: pointer;
-            box-shadow: 0 12px 30px rgba(190, 80, 180, 0.3);
-            transition: 0.3s ease;
-        }
-
-        .open-button:hover {
-            transform: translateY(-4px) scale(1.03);
-        }
-
-        .hint {
-            margin-top: 18px;
-            font-size: 14px;
-            color: #9b849b;
-        }
-
-
-        /* =========================
-           CONTEÚDO
-        ========================= */
-
-        #surprise {
-            display: none;
-            animation: aparecer 1s ease;
-        }
-
-        @keyframes aparecer {
-
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* =========================
-           MENSAGEM
-        ========================= */
-
-        .message {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 50px 30px;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 12px 40px rgba(70, 30, 80, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .message h2 {
-            font-size: clamp(28px, 5vw, 40px);
-            margin-bottom: 25px;
-        }
-
-        .message p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #69566a;
-        }
-
-
-        /* =========================
-           GALERIA
-        ========================= */
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .gallery-title h2 {
-            font-size: clamp(28px, 5vw, 40px);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .photo {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 22px;
-            display: block;
-            box-shadow: 0 10px 30px rgba(70, 30, 70, 0.15);
-            transition: 0.35s ease;
-        }
-
-        .photo:hover {
-            transform: scale(1.03);
-        }
-
-
-        /* =========================
-           FINAL
-        ========================= */
-
-        .final {
-            margin-top: 45px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            padding: 55px 25px;
-            text-align: center;
-        }
-
-        .heart {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        .final h2 {
-            font-size: clamp(28px, 5vw, 40px);
-            margin-bottom: 18px;
-        }
-
-        .final p {
-            font-size: 18px;
-            color: #69566a;
-            line-height: 1.7;
-        }
-
-        .signature {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           BOTÃO DA MÚSICA
-        ========================= */
-
-        #musicButton {
-            display: none;
-
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-
-            width: 58px;
-            height: 58px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: white;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-
-            z-index: 999;
-        }
-
-        #musicButton:hover {
-            transform: scale(1.08);
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .container {
-                width: 94%;
-            }
-
-            .hero-box {
-                padding: 50px 20px;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .photo {
-                height: 350px;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <div class="container">
-
-
-        <!-- =========================
-             ABERTURA
-        ========================= -->
-
-        <section class="hero">
-
-            <div class="hero-box">
-
-                <div class="small-title">
-                    UMA SURPRESA PARA VOCÊ 💕
-                </div>
-
-                <h1>
-                    Feliz Aniversário, Gabi! 🎂
-                </h1>
-
-                <p class="subtitle">
-                    Preparei uma coisinha especial para você.
-                    Espero que goste! ✨
-                </p>
-
-                <button
-                    class="open-button"
-                    onclick="abrirSurpresa()">
-
-                    ✨ Abrir meu presente ✨
-
-                </button>
-
-                <p class="hint">
-                    Clique para abrir 💖
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SURPRESA
-        ========================= -->
-
-        <section id="surprise">
-
-
-            <!-- MENSAGEM -->
-
-            <div class="message">
-
-                <h2>
-                    Para uma pessoa muito especial 💌
-                </h2>
-
-                <p>
-
-                    Gabi, esse pequeno site foi feito especialmente
-                    para comemorar o seu aniversário.
-
-                    <br><br>
-
-                    Que esse novo ciclo seja cheio de momentos
-                    incríveis, risadas, sonhos realizados e muitas
-                    coisas boas.
-
-                    <br><br>
-
-                    Espero que você goste desse pequeno presente. 💖
-
-                </p>
-
-            </div>
-
-
-            <!-- GALERIA -->
-
-            <div class="gallery-title">
-
-                <div class="small-title">
-                    ALGUMAS MEMÓRIAS 📸
-                </div>
-
-                <h2>
-                    Momentos especiais
-                </h2>
-
-            </div>
-
-
-            <div class="gallery">
-
-                <img
-                    src="foto1.jpeg"
-                    class="photo"
-                    alt="Foto especial 1">
-
-                <img
-                    src="foto2.jpeg"
-                    class="photo"
-                    alt="Foto especial 2">
-
-                <img
-                    src="foto3.jpeg"
-                    class="photo"
-                    alt="Foto especial 3">
-
-                <img
-                    src="foto4.jpeg"
-                    class="photo"
-                    alt="Foto especial 4">
-
-                <img
-                    src="foto5.jpeg"
-                    class="photo"
-                    alt="Foto especial 5">
-
-                <img
-                    src="foto6.jpeg"
-                    class="photo"
-                    alt="Foto especial 6">
-
-                <img
-                    src="foto7.jpeg"
-                    class="photo"
-                    alt="Foto especial 7">
-
-            </div>
-
-
-            <!-- FINAL -->
-
-            <div class="final">
-
-                <div class="heart">
-                    💖
-                </div>
-
-                <h2>
-                    Feliz aniversário, Gabi!
-                </h2>
-
-                <p>
-                    Que seu dia seja incrível e que esse novo ciclo
-                    traga muitos momentos inesquecíveis. ✨
-                </p>
-
-                <p class="signature">
-                    Com carinho 💕
-                </p>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-    <!-- =========================
-         ÁUDIO
-    ========================= -->
-
-    <audio
-        id="musica"
-        loop
-        preload="auto">
-
-        <source
-            src="musica.mp3"
-            type="audio/mpeg">
-
+    <!-- Música -->
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
-
-    <!-- BOTÃO DE CONTROLE -->
-
-    <button
-        id="musicButton"
-        onclick="alternarMusica()">
-
+    <!-- Botão de música -->
+    <button id="musicButton" class="music-button" title="Música">
         🔊
-
     </button>
 
 
-    <script>
+    <!-- ABERTURA -->
+    <section class="hero">
 
-        const musica = document.getElementById("musica");
-        const surpresa = document.getElementById("surprise");
-        const musicButton = document.getElementById("musicButton");
+        <div class="hero-card">
 
+            <div class="small-title">
+                UMA SURPRESA PARA VOCÊ 💕
+            </div>
 
-        function abrirSurpresa() {
+            <h1>
+                Feliz Aniversário, Gabi! 🎂
+            </h1>
 
-            /* Mostra o conteúdo */
+            <p>
+                Preparei uma coisinha especial para você.
+                <br>
+                Espero que goste! ✨
+            </p>
 
-            surpresa.style.display = "block";
+            <button id="openButton" class="open-button">
+                ✨ Abrir meu presente ✨
+            </button>
 
+            <div class="click-text">
+                Clique para abrir 💗
+            </div>
 
-            /* Mostra o botão da música */
+        </div>
 
-            musicButton.style.display = "block";
-
-
-            /*
-             * Como essa função é chamada pelo clique
-             * do usuário, o navegador normalmente permite
-             * iniciar o áudio.
-             */
-
-            musica.play()
-                .then(() => {
-
-                    musicButton.innerHTML = "🔊";
-
-                })
-                .catch(() => {
-
-                    musicButton.innerHTML = "🎵";
-
-                });
+    </section>
 
 
-            /* Desce até a surpresa */
+    <!-- CONTEÚDO -->
+    <main id="conteudo" class="content">
 
-            setTimeout(() => {
+        <!-- MENSAGEM -->
+        <section class="message-card">
 
-                surpresa.scrollIntoView({
-                    behavior: "smooth"
-                });
+            <div class="small-title">
+                UM PRESENTE ESPECIAL 💕
+            </div>
 
-            }, 100);
+            <h2>
+                Para uma pessoa muito especial ❤️
+            </h2>
 
-        }
+            <p>
+                Gabi, esse pequeno site foi feito especialmente para
+                comemorar o seu aniversário.
+            </p>
+
+            <p>
+                Espero que esse novo ciclo seja cheio de momentos
+                incríveis, muitas risadas, sonhos realizados e,
+                principalmente, pessoas que façam você feliz.
+            </p>
+
+            <p>
+                Que você continue sendo essa pessoa maravilhosa,
+                com esse jeito único que faz diferença na vida
+                de quem está ao seu redor.
+            </p>
+
+            <p>
+                Espero que você goste desse pequeno presente. 💖
+            </p>
+
+        </section>
 
 
-        function alternarMusica() {
+        <!-- FOTOS -->
+        <section class="photos-section">
 
-            if (musica.paused) {
+            <div class="small-title">
+                ALGUMAS MEMÓRIAS 📸
+            </div>
 
-                musica.play();
+            <h2>
+                Momentos especiais
+            </h2>
 
-                musicButton.innerHTML = "🔊";
+            <div class="heart-divider">
+                ─── 💗 ───
+            </div>
 
-            } else {
+            <div class="photo-grid">
 
-                musica.pause();
+                <img src="foto1.jpeg" alt="Memória 1">
+                <img src="foto2.jpeg" alt="Memória 2">
+                <img src="foto3.jpeg" alt="Memória 3">
+                <img src="foto4.jpeg" alt="Memória 4">
+                <img src="foto5.jpeg" alt="Memória 5">
+                <img src="foto6.jpeg" alt="Memória 6">
+                <img src="foto7.jpeg" alt="Memória 7">
 
-                musicButton.innerHTML = "🔇";
+            </div>
 
-            }
+        </section>
 
-        }
 
-    </script>
+        <!-- MENSAGEM FINAL + BOLO -->
+        <section class="final-card">
+
+            <div class="final-message">
+
+                <h2>
+                    Feliz aniversário, Gabi! 💖
+                </h2>
+
+                <p>
+                    Que seu dia seja tão especial quanto você e que
+                    esse novo ciclo venha cheio de momentos que façam
+                    você sorrir de verdade.
+                </p>
+
+                <p>
+                    Que nunca faltem motivos para sorrir, pessoas
+                    especiais ao seu lado, saúde, paz, amor,
+                    felicidade e muitos sonhos para realizar.
+                </p>
+
+                <p>
+                    Espero que você continue aproveitando cada
+                    momento, conquistando tudo aquilo que deseja
+                    e nunca deixe de ser essa pessoa incrível.
+                </p>
+
+                <p>
+                    Você merece muitas coisas boas nesse novo ciclo.
+                    💕
+                </p>
+
+                <h3>
+                    Que seus 27 sejam incríveis! ✨
+                </h3>
+
+                <p class="signature">
+                    Com carinho, ❤️
+                </p>
+
+            </div>
+
+
+            <!-- BOLO -->
+            <div class="cake-area">
+
+                <div class="candle-instruction">
+                    Clique nas velas para apagá-las! ✨
+                </div>
+
+                <div class="cake">
+
+                    <!-- VELAS 27 -->
+                    <div class="number-candle candle-2" data-candle="2">
+
+                        <div class="flame">🔥</div>
+
+                        <div class="number">
+                            2
+                        </div>
+
+                    </div>
+
+                    <div class="number-candle candle-7" data-candle="7">
+
+                        <div class="flame">🔥</div>
+
+                        <div class="number">
+                            7
+                        </div>
+
+                    </div>
+
+
+                    <!-- COBERTURA -->
+                    <div class="cake-top">
+
+                        <div class="sprinkles">
+                            ✦ • ✧ • ✦ • ✧ • ✦
+                        </div>
+
+                    </div>
+
+                    <!-- BOLO -->
+                    <div class="cake-body">
+
+                        <div class="cake-decoration">
+                            ♥ ♥ ♥ ♥ ♥
+                        </div>
+
+                    </div>
+
+                    <!-- PRATO -->
+                    <div class="plate"></div>
+
+                </div>
+
+                <div id="cakeMessage" class="cake-message">
+                    Faça um pedido... 🎂
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        💗 Feito com carinho especialmente para você 💗
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
-
 </html>

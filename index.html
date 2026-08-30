@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,24 +12,61 @@
 
 <body>
 
-    <!-- Música -->
-    <audio id="musica" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
+    <!-- ==============================
+         TELA INICIAL
+    =============================== -->
 
-    <!-- Botão de música -->
-    <button id="musicButton" class="music-button" title="Música">
-        🔊
-    </button>
+    <main id="inicio" class="tela-inicial">
 
+        <div class="intro-card">
 
-    <!-- ABERTURA -->
-    <section class="hero">
-
-        <div class="hero-card">
-
-            <div class="small-title">
+            <div class="mini-titulo">
                 UMA SURPRESA PARA VOCÊ 💕
+            </div>
+
+            <h1>
+                Tenho uma surpresa...
+            </h1>
+
+            <p>
+                Preparei uma coisinha especial para o seu aniversário ✨
+            </p>
+
+            <button id="abrirSurpresa">
+                Abrir surpresa ✨
+            </button>
+
+            <small>
+                Clique para abrir
+            </small>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         CONTEÚDO PRINCIPAL
+    =============================== -->
+
+    <main id="conteudo" class="conteudo escondido">
+
+        <!-- MÚSICA -->
+
+        <audio id="musica" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+
+
+        <!-- ==============================
+             CABEÇALHO
+        =============================== -->
+
+        <section class="hero">
+
+            <div class="mini-titulo">
+                UM PRESENTE ESPECIAL 💕
             </div>
 
             <h1>
@@ -36,207 +74,246 @@
             </h1>
 
             <p>
-                Preparei uma coisinha especial para você.
-                <br>
-                Espero que goste! ✨
+                Hoje é um dia especial para celebrar uma pessoa ainda mais especial.
             </p>
 
-            <button id="openButton" class="open-button">
-                ✨ Abrir meu presente ✨
-            </button>
-
-            <div class="click-text">
-                Clique para abrir 💗
-            </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CONTEÚDO -->
-    <main id="conteudo" class="content">
+        <!-- ==============================
+             MENSAGEM
+        =============================== -->
 
-        <!-- MENSAGEM -->
-        <section class="message-card">
+        <section class="mensagem">
 
-            <div class="small-title">
-                UM PRESENTE ESPECIAL 💕
+            <div class="coracao">
+                💗
             </div>
 
             <h2>
-                Para uma pessoa muito especial ❤️
+                Um cantinho feito especialmente para você
             </h2>
 
             <p>
-                Gabi, esse pequeno site foi feito especialmente para
+                Esse pequeno presente foi feito com muito carinho para
                 comemorar o seu aniversário.
             </p>
 
             <p>
-                Espero que esse novo ciclo seja cheio de momentos
-                incríveis, muitas risadas, sonhos realizados e,
-                principalmente, pessoas que façam você feliz.
+                Espero que seu novo ciclo seja cheio de momentos incríveis,
+                risadas, sonhos realizados e pessoas que façam você feliz.
             </p>
 
             <p>
-                Que você continue sendo essa pessoa maravilhosa,
-                com esse jeito único que faz diferença na vida
-                de quem está ao seu redor.
+                Que você continue sendo essa pessoa maravilhosa e que nunca
+                faltem motivos para sorrir.
             </p>
 
             <p>
-                Espero que você goste desse pequeno presente. 💖
+                Aproveite bastante o seu dia, porque você merece! 💕✨
             </p>
 
         </section>
 
 
-        <!-- FOTOS -->
-        <section class="photos-section">
+        <!-- ==============================
+             GALERIA
+        =============================== -->
 
-            <div class="small-title">
-                ALGUMAS MEMÓRIAS 📸
+        <section class="galeria-section">
+
+            <h2>
+                Alguns momentos 💕
+            </h2>
+
+            <p>
+                Porque uma foto nunca é suficiente para guardar todas as lembranças.
+            </p>
+
+            <div class="galeria">
+
+                <div class="foto-card">
+                    <img src="foto1.jpeg" alt="Foto 1">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto2.jpeg" alt="Foto 2">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto3.jpeg" alt="Foto 3">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto4.jpeg" alt="Foto 4">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto5.jpeg" alt="Foto 5">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto6.jpeg" alt="Foto 6">
+                </div>
+
+                <div class="foto-card">
+                    <img src="foto7.jpeg" alt="Foto 7">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             BOLO
+        =============================== -->
+
+        <section class="bolo-section">
+
+            <div class="mini-titulo">
+                AGORA FAÇA UM PEDIDO ✨
             </div>
 
             <h2>
-                Momentos especiais
+                Hora de apagar as velinhas! 🎂
             </h2>
 
-            <div class="heart-divider">
-                ─── 💗 ───
-            </div>
-
-            <div class="photo-grid">
-
-                <img src="foto1.jpeg" alt="Memória 1">
-                <img src="foto2.jpeg" alt="Memória 2">
-                <img src="foto3.jpeg" alt="Memória 3">
-                <img src="foto4.jpeg" alt="Memória 4">
-                <img src="foto5.jpeg" alt="Memória 5">
-                <img src="foto6.jpeg" alt="Memória 6">
-                <img src="foto7.jpeg" alt="Memória 7">
-
-            </div>
-
-        </section>
+            <p class="instrucao">
+                Clique nas duas velinhas para apagá-las 💕
+            </p>
 
 
-        <!-- MENSAGEM FINAL + BOLO -->
-        <section class="final-card">
-
-            <div class="final-message">
-
-                <h2>
-                    Feliz aniversário, Gabi! 💖
-                </h2>
-
-                <p>
-                    Que seu dia seja tão especial quanto você e que
-                    esse novo ciclo venha cheio de momentos que façam
-                    você sorrir de verdade.
-                </p>
-
-                <p>
-                    Que nunca faltem motivos para sorrir, pessoas
-                    especiais ao seu lado, saúde, paz, amor,
-                    felicidade e muitos sonhos para realizar.
-                </p>
-
-                <p>
-                    Espero que você continue aproveitando cada
-                    momento, conquistando tudo aquilo que deseja
-                    e nunca deixe de ser essa pessoa incrível.
-                </p>
-
-                <p>
-                    Você merece muitas coisas boas nesse novo ciclo.
-                    💕
-                </p>
-
-                <h3>
-                    Que seus 27 sejam incríveis! ✨
-                </h3>
-
-                <p class="signature">
-                    Com carinho, ❤️
-                </p>
-
-            </div>
-
-
-            <!-- BOLO -->
             <div class="cake-area">
-
-                <div class="candle-instruction">
-                    Clique nas velas para apagá-las! ✨
-                </div>
 
                 <div class="cake">
 
-                    <!-- VELAS 27 -->
-                    <div class="number-candle candle-2" data-candle="2">
+                    <!-- PARTE DE CIMA -->
 
-                        <div class="flame">🔥</div>
-
-                        <div class="number">
-                            2
-                        </div>
-
-                    </div>
-
-                    <div class="number-candle candle-7" data-candle="7">
-
-                        <div class="flame">🔥</div>
-
-                        <div class="number">
-                            7
-                        </div>
-
-                    </div>
-
-
-                    <!-- COBERTURA -->
                     <div class="cake-top">
 
-                        <div class="sprinkles">
-                            ✦ • ✧ • ✦ • ✧ • ✦
-                        </div>
+                        <!-- DECORAÇÃO -->
+
+                        <div class="cream cream1"></div>
+                        <div class="cream cream2"></div>
+                        <div class="cream cream3"></div>
+                        <div class="cream cream4"></div>
+                        <div class="cream cream5"></div>
+
+
+                        <!-- VELA 2 -->
+
+                        <button
+                            class="candle candle2"
+                            aria-label="Apagar vela número 2">
+
+                            <span class="flame"></span>
+                            <span class="wick"></span>
+                            <span class="number">2</span>
+
+                        </button>
+
+
+                        <!-- VELA 7 -->
+
+                        <button
+                            class="candle candle7"
+                            aria-label="Apagar vela número 7">
+
+                            <span class="flame"></span>
+                            <span class="wick"></span>
+                            <span class="number">7</span>
+
+                        </button>
 
                     </div>
 
-                    <!-- BOLO -->
+
+                    <!-- CORPO DO BOLO -->
+
                     <div class="cake-body">
 
-                        <div class="cake-decoration">
-                            ♥ ♥ ♥ ♥ ♥
-                        </div>
+                        <div class="drip drip1"></div>
+                        <div class="drip drip2"></div>
+                        <div class="drip drip3"></div>
+                        <div class="drip drip4"></div>
+                        <div class="drip drip5"></div>
+
+                        <span class="heart heart1">♥</span>
+                        <span class="heart heart2">♥</span>
+                        <span class="heart heart3">♥</span>
+                        <span class="heart heart4">♥</span>
 
                     </div>
 
-                    <!-- PRATO -->
-                    <div class="plate"></div>
+
+                    <!-- BASE -->
+
+                    <div class="cake-base"></div>
 
                 </div>
 
-                <div id="cakeMessage" class="cake-message">
-                    Faça um pedido... 🎂
+            </div>
+
+
+            <!-- MENSAGEM APÓS APAGAR -->
+
+            <div id="mensagemFinal" class="mensagem-final">
+
+                <div class="final-emoji">
+                    🎂✨
                 </div>
+
+                <h2>
+                    Pedido feito! 💕
+                </h2>
+
+                <p>
+                    Espero que esse novo ano da sua vida seja incrível,
+                    cheio de momentos felizes, novas histórias e muitos
+                    motivos para sorrir.
+                </p>
+
+                <p>
+                    Obrigado por fazer parte da minha vida e por todos
+                    os momentos que já compartilhamos.
+                </p>
+
+                <p>
+                    Que todos os seus sonhos encontrem um caminho para
+                    se realizar.
+                </p>
+
+                <strong>
+                    Feliz aniversário, Gabi! 💗🎉
+                </strong>
 
             </div>
 
         </section>
 
+
+        <!-- ==============================
+             FINAL
+        =============================== -->
+
+        <footer>
+
+            <p>
+                Feito com carinho especialmente para você 💕
+            </p>
+
+            <span>
+                🎂 • 💗 • ✨
+            </span>
+
+        </footer>
+
     </main>
-
-
-    <!-- RODAPÉ -->
-    <footer>
-        💗 Feito com carinho especialmente para você 💗
-    </footer>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

@@ -1,254 +1,57 @@
-"use strict";
+const startButton = document.getElementById("startButton");
+const mainContent = document.getElementById("mainContent");
+const musicButton = document.getElementById("musicButton");
+const player = document.getElementById("youtubePlayer");
 
-const intro =
-document.getElementById("intro");
+let musicPlaying = false;
 
-const openButton =
-document.getElementById("openButton");
+function playMusic() {
+    player.contentWindow.postMessage(
+        JSON.stringify({
+            event: "command",
+            func: "playVideo",
+            args: []
+        }),
+        "*"
+    );
 
-const gift =
-document.getElementById("gift");
-
-const mainContent =
-document.getElementById("mainContent");
-
-const youtubeFrame =
-document.getElementById("youtubePlayer");
-
-const confettiButton =
-document.getElementById("confettiButton");
-
-let surpriseOpened = false;
-
-/* =========================
-ABRIR SURPRESA
-========================= */
-
-function openSurprise() {
-
-```
-if (surpriseOpened) {
-    return;
+    musicPlaying = true;
+    musicButton.textContent = "🔊";
 }
 
-surpriseOpened = true;
+function pauseMusic() {
+    player.contentWindow.postMessage(
+        JSON.stringify({
+            event: "command",
+            func: "pauseVideo",
+            args: []
+        }),
+        "*"
+    );
 
-console.log("🎁 Abrindo surpresa...");
+    musicPlaying = false;
+    musicButton.textContent = "🎵";
+}
 
+startButton.addEventListener("click", () => {
 
-/*
- * Envia o comando PLAY para o player
- * incorporado do YouTube.
- */
+    mainContent.classList.add("show");
 
-youtubeFrame.contentWindow.postMessage(
-    JSON.stringify({
-        event: "command",
-        func: "playVideo",
-        args: []
-    }),
-    "*"
-);
+    playMusic();
 
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
 
-/* Fecha a tela inicial */
-
-intro.classList.add(
-    "hidden-intro"
-);
-
-
-/* Mostra o site */
-
-mainContent.classList.remove(
-    "hidden"
-);
-
-
-/* Confetes */
-
-createConfetti(60);
-
-
-window.scrollTo({
-    top: 0,
-    behavior: "instant"
 });
 
+musicButton.addEventListener("click", () => {
 
-console.log("🎵 Tentativa de iniciar música.");
-```
-
-}
-
-/* =========================
-EVENTOS
-========================= */
-
-openButton.addEventListener(
-"click",
-openSurprise
-);
-
-gift.addEventListener(
-"click",
-openSurprise
-);
-
-/* =========================
-CONFETES
-========================= */
-
-function createConfetti(
-amount = 80
-) {
-
-```
-const symbols = [
-    "💖",
-    "💕",
-    "✨",
-    "🎉",
-    "🌸",
-    "⭐",
-    "💗"
-];
-
-
-for (
-    let i = 0;
-    i < amount;
-    i++
-) {
-
-    const confetti =
-        document.createElement(
-            "div"
-        );
-
-
-    confetti.className =
-        "confetti";
-
-
-    confetti.textContent =
-        symbols[
-            Math.floor(
-                Math.random()
-                * symbols.length
-            )
-        ];
-
-
-    confetti.style.left =
-        Math.random() * 100
-        + "vw";
-
-
-    confetti.style.fontSize =
-        (
-            12 +
-            Math.random() * 20
-        ) + "px";
-
-
-    confetti.style.animationDuration =
-        (
-            3 +
-            Math.random() * 4
-        ) + "s";
-
-
-    confetti.style.animationDelay =
-        (
-            Math.random() * 1.5
-        ) + "s";
-
-
-    document.body.appendChild(
-        confetti
-    );
-
-
-    setTimeout(
-        () => confetti.remove(),
-        8000
-    );
-
-}
-```
-
-}
-
-/* =========================
-BOTÃO COMEMORAR
-========================= */
-
-confettiButton.addEventListener(
-"click",
-() => {
-
-```
-    createConfetti(120);
-
-    console.log(
-        "🎉 Mais confetes!"
-    );
-
-}
-```
-
-);
-
-/* =========================
-DEBUG
-========================= */
-
-console.log(
-"%c🎂 SITE DE ANIVERSÁRIO",
-"font-size:20px;font-weight:bold"
-);
-
-console.log(
-"✅ JavaScript carregado."
-);
-
-/* =========================
-DEBUG DAS FOTOS
-========================= */
-
-document
-.querySelectorAll("img")
-.forEach(
-(image) => {
-
-```
-        image.addEventListener(
-            "load",
-            () => {
-
-                console.log(
-                    "✅ Foto carregada:",
-                    image.src
-                );
-
-            }
-        );
-
-
-        image.addEventListener(
-            "error",
-            () => {
-
-                console.warn(
-                    "⚠️ Foto não encontrada:",
-                    image.src
-                );
-
-            }
-        );
-
+    if (musicPlaying) {
+        pauseMusic();
+    } else {
+        playMusic();
     }
-);
-```
 
+});

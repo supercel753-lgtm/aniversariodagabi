@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Uma surpresa especial de aniversário 💖"
+    >
 
     <title>Feliz Aniversário! 💖</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 
 <body>
 
-    <section id="intro" class="intro">
+    <!-- =====================================
+         TELA DE ABERTURA
+    ====================================== -->
+
+    <section
+        id="intro"
+        class="intro"
+    >
 
         <div class="intro-content">
 
-            <div class="gift" id="gift">
+            <div
+                id="gift"
+                class="gift"
+                aria-hidden="true"
+            >
                 🎁
             </div>
 
-            <h1>Tenho uma surpresa para você...</h1>
+            <span class="intro-label">
+                UMA SURPRESA PARA VOCÊ
+            </span>
+
+            <h1>
+                Tenho uma surpresa...
+            </h1>
 
             <p>
-                Preparei uma coisinha especial para o seu aniversário 💖
+                Preparei uma coisinha especial
+                para o seu aniversário 💖
             </p>
 
-            <button id="openButton">
+            <button
+                id="openButton"
+                class="primary-button"
+            >
                 Abrir surpresa ✨
             </button>
+
+            <small class="tap-hint">
+                Clique para abrir
+            </small>
 
         </div>
 
     </section>
 
 
-    <main id="mainContent" class="hidden">
+
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+    ====================================== -->
+
+    <main
+        id="mainContent"
+        class="hidden"
+    >
+
+
+        <!-- =================================
+             HERO
+        ================================== -->
 
         <section class="hero">
+
+            <div class="hero-background">
+                <span>✨</span>
+                <span>💖</span>
+                <span>⭐</span>
+                <span>💕</span>
+                <span>✨</span>
+            </div>
+
 
             <div class="hero-content">
 
@@ -50,52 +111,75 @@
                 </h2>
 
                 <p>
-                    Que seu dia seja tão incrível quanto você merece.
+                    Que seu dia seja tão incrível
+                    quanto você merece.
                 </p>
-
-                <button id="musicButton">
-                    🔊 Música
-                </button>
 
             </div>
 
         </section>
 
 
+
+        <!-- =================================
+             CARTA
+        ================================== -->
+
         <section class="letter-section">
 
             <div class="section-title">
 
-                <span>💌</span>
+                <span class="section-icon">
+                    💌
+                </span>
 
                 <h2>
                     Uma mensagem para você
                 </h2>
 
+                <p>
+                    Algumas palavras que eu queria
+                    te dizer hoje.
+                </p>
+
             </div>
+
 
             <div class="letter">
 
+                <div class="letter-decoration">
+                    ✨
+                </div>
+
                 <p>
-                    Mana, hoje é um daqueles dias que merecem ser
-                    comemorados de um jeito especial.
+                    Mana, hoje é um daqueles dias
+                    que merecem ser comemorados de
+                    um jeito muito especial.
                 </p>
 
                 <p>
-                    Quero te desejar muita felicidade, muitos momentos
-                    incríveis e que você consiga realizar tudo aquilo
+                    Quero te desejar muita felicidade,
+                    muitos momentos incríveis e que
+                    você consiga realizar tudo aquilo
                     que deseja.
                 </p>
 
                 <p>
-                    Obrigado por todos os momentos, pelas risadas,
-                    pelas conversas e por fazer parte da minha vida.
+                    Obrigado por todos os momentos,
+                    pelas risadas, pelas conversas e
+                    por fazer parte da minha vida.
                 </p>
 
                 <p>
-                    Espero que esse novo ano da sua vida seja cheio de
-                    coisas boas, novas histórias e muitos motivos para
-                    sorrir.
+                    Espero que esse novo ano da sua
+                    vida seja cheio de coisas boas,
+                    novas histórias e muitos motivos
+                    para sorrir.
+                </p>
+
+                <p>
+                    Continue sendo essa pessoa incrível
+                    que você é.
                 </p>
 
                 <p class="signature">
@@ -108,18 +192,26 @@
         </section>
 
 
+
+        <!-- =================================
+             GALERIA
+        ================================== -->
+
         <section class="gallery-section">
 
             <div class="section-title">
 
-                <span>📸</span>
+                <span class="section-icon">
+                    📸
+                </span>
 
                 <h2>
                     Algumas memórias
                 </h2>
 
                 <p>
-                    Porque alguns momentos merecem ficar guardados.
+                    Porque alguns momentos merecem
+                    ficar guardados.
                 </p>
 
             </div>
@@ -128,29 +220,65 @@
             <div class="gallery">
 
                 <div class="photo-card">
-                    <img src="foto1.jpg" alt="Foto especial 1">
+
+                    <img
+                        src="foto1.jpg"
+                        alt="Uma memória especial"
+                        loading="lazy"
+                    >
+
                     <span>💖</span>
+
                 </div>
 
+
                 <div class="photo-card">
-                    <img src="foto2.jpg" alt="Foto especial 2">
+
+                    <img
+                        src="foto2.jpg"
+                        alt="Uma memória especial"
+                        loading="lazy"
+                    >
+
                     <span>✨</span>
+
                 </div>
 
+
                 <div class="photo-card">
-                    <img src="foto3.jpg" alt="Foto especial 3">
+
+                    <img
+                        src="foto3.jpg"
+                        alt="Uma memória especial"
+                        loading="lazy"
+                    >
+
                     <span>🌸</span>
+
                 </div>
 
+
                 <div class="photo-card">
-                    <img src="foto4.jpg" alt="Foto especial 4">
+
+                    <img
+                        src="foto4.jpg"
+                        alt="Uma memória especial"
+                        loading="lazy"
+                    >
+
                     <span>💕</span>
+
                 </div>
 
             </div>
 
         </section>
 
+
+
+        <!-- =================================
+             BOLO
+        ================================== -->
 
         <section class="cake-section">
 
@@ -163,15 +291,24 @@
             </h2>
 
             <p>
-                Que todos os seus desejos possam se realizar.
+                Que todos os seus desejos
+                possam se realizar.
             </p>
 
-            <button id="confettiButton">
+            <button
+                id="confettiButton"
+                class="primary-button"
+            >
                 🎉 Comemorar!
             </button>
 
         </section>
 
+
+
+        <!-- =================================
+             FINAL
+        ================================== -->
 
         <section class="final-section">
 
@@ -186,7 +323,8 @@
                 </h2>
 
                 <p>
-                    Espero que você tenha um dia maravilhoso.
+                    Espero que você tenha
+                    um dia maravilhoso.
                 </p>
 
                 <p class="big-message">
@@ -201,15 +339,36 @@
 
         </section>
 
+
     </main>
 
 
-    <audio id="backgroundMusic" loop>
-        <source src="musica.mp3" type="audio/mpeg">
+
+    <!-- =====================================
+         MÚSICA
+    ====================================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+        <source
+            src="musica.mp3"
+            type="audio/mpeg"
+        >
+
+        Seu navegador não suporta áudio.
     </audio>
 
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

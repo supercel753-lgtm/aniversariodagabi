@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,15 @@
     <title>Feliz Aniversário, Gabi! 💖</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -22,64 +28,80 @@
         }
 
         .container {
-            width: min(900px, 92%);
+            width: min(1000px, 92%);
             margin: auto;
-            padding: 50px 0;
+            padding: 40px 0 80px;
         }
 
-        /* ABERTURA */
+        /* =========================
+           ABERTURA
+        ========================= */
 
         .hero {
-            background: rgba(255, 255, 255, 0.88);
-            border-radius: 30px;
-            padding: 55px 25px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-box {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 35px;
+            padding: 70px 30px;
             text-align: center;
-            box-shadow: 0 15px 45px rgba(80, 30, 80, 0.12);
+            box-shadow: 0 20px 60px rgba(70, 30, 80, 0.15);
         }
 
         .small-title {
-            letter-spacing: 5px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
-            color: #795477;
-            margin-bottom: 18px;
+            letter-spacing: 5px;
+            color: #805b80;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: clamp(36px, 7vw, 62px);
-            margin-bottom: 18px;
+            font-size: clamp(40px, 8vw, 72px);
+            line-height: 1.1;
+            margin-bottom: 25px;
         }
 
         .subtitle {
-            font-size: 20px;
+            font-size: clamp(18px, 3vw, 23px);
             color: #705b70;
-            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 35px;
         }
 
         .open-button {
             border: none;
-            background: linear-gradient(135deg, #ff6fae, #c86bff);
-            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
             font-size: 18px;
             font-weight: bold;
-            padding: 16px 32px;
-            border-radius: 50px;
+            color: white;
+            background: linear-gradient(135deg, #ff6fae, #c86bff);
             cursor: pointer;
-            box-shadow: 0 10px 25px rgba(200, 90, 180, 0.3);
-            transition: 0.25s;
+            box-shadow: 0 12px 30px rgba(190, 80, 180, 0.3);
+            transition: 0.3s ease;
         }
 
         .open-button:hover {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-4px) scale(1.03);
         }
 
         .hint {
-            margin-top: 15px;
-            color: #987f98;
+            margin-top: 18px;
             font-size: 14px;
+            color: #9b849b;
         }
 
-        /* CONTEÚDO */
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
 
         #surprise {
             display: none;
@@ -87,6 +109,7 @@
         }
 
         @keyframes aparecer {
+
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -96,172 +119,239 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
+
+
+        /* =========================
+           MENSAGEM
+        ========================= */
 
         .message {
             background: rgba(255, 255, 255, 0.9);
-            margin-top: 35px;
-            padding: 40px;
-            border-radius: 25px;
+            padding: 50px 30px;
+            border-radius: 30px;
             text-align: center;
-            box-shadow: 0 10px 35px rgba(80, 30, 80, 0.1);
+            box-shadow: 0 12px 40px rgba(70, 30, 80, 0.1);
+            margin-bottom: 40px;
         }
 
         .message h2 {
-            font-size: 32px;
-            margin-bottom: 18px;
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 25px;
         }
 
         .message p {
+            max-width: 800px;
+            margin: auto;
             font-size: 18px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #69566a;
         }
 
-        /* FOTOS */
 
-        .photos {
-            margin-top: 35px;
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        .photos h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 25px;
+        .gallery-title h2 {
+            font-size: clamp(28px, 5vw, 40px);
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .photo {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: 300px;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(70, 30, 70, 0.15);
-            transition: 0.3s;
+            border-radius: 22px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(70, 30, 70, 0.15);
+            transition: 0.35s ease;
         }
 
         .photo:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
-        /* FINAL */
 
-        .final-message {
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final {
+            margin-top: 45px;
             background: rgba(255, 255, 255, 0.9);
-            margin-top: 35px;
-            padding: 45px 25px;
-            border-radius: 25px;
+            border-radius: 30px;
+            padding: 55px 25px;
             text-align: center;
         }
 
-        .final-message h2 {
-            font-size: 30px;
+        .heart {
+            font-size: 60px;
             margin-bottom: 15px;
         }
 
-        .final-message p {
-            color: #69566a;
+        .final h2 {
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 18px;
+        }
+
+        .final p {
             font-size: 18px;
-            line-height: 1.6;
+            color: #69566a;
+            line-height: 1.7;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #987f98;
-            font-size: 14px;
+        .signature {
+            margin-top: 20px;
+            font-weight: bold;
         }
 
-        /* BOTÃO DA MÚSICA */
 
-        .music-button {
+        /* =========================
+           BOTÃO DA MÚSICA
+        ========================= */
+
+        #musicButton {
+            display: none;
+
             position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 55px;
-            height: 55px;
+            right: 22px;
+            bottom: 22px;
+
+            width: 58px;
+            height: 58px;
+
             border: none;
             border-radius: 50%;
+
             background: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+            font-size: 24px;
+
             cursor: pointer;
-            font-size: 23px;
-            z-index: 100;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+            z-index: 999;
         }
 
-        @media (max-width: 600px) {
+        #musicButton:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 94%;
+            }
+
+            .hero-box {
+                padding: 50px 20px;
+            }
+
             .gallery {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                padding: 40px 20px;
+            .photo {
+                height: 350px;
             }
 
-            .message {
-                padding: 30px 20px;
-            }
         }
+
     </style>
 </head>
+
 
 <body>
 
     <div class="container">
 
-        <!-- ABERTURA -->
+
+        <!-- =========================
+             ABERTURA
+        ========================= -->
 
         <section class="hero">
 
-            <div class="small-title">
-                UMA SURPRESA PARA VOCÊ 💕
+            <div class="hero-box">
+
+                <div class="small-title">
+                    UMA SURPRESA PARA VOCÊ 💕
+                </div>
+
+                <h1>
+                    Feliz Aniversário, Gabi! 🎂
+                </h1>
+
+                <p class="subtitle">
+                    Preparei uma coisinha especial para você.
+                    Espero que goste! ✨
+                </p>
+
+                <button
+                    class="open-button"
+                    onclick="abrirSurpresa()">
+
+                    ✨ Abrir meu presente ✨
+
+                </button>
+
+                <p class="hint">
+                    Clique para abrir 💖
+                </p>
+
             </div>
-
-            <h1>
-                Feliz Aniversário, Gabi! 🎂
-            </h1>
-
-            <p class="subtitle">
-                Preparei uma coisinha especial para você ✨
-            </p>
-
-            <button class="open-button" onclick="abrirSurpresa()">
-                ✨ Abrir meu presente ✨
-            </button>
-
-            <p class="hint">
-                Clique para abrir 💖
-            </p>
 
         </section>
 
 
-        <!-- CONTEÚDO ESCONDIDO -->
+        <!-- =========================
+             SURPRESA
+        ========================= -->
 
         <section id="surprise">
+
+
+            <!-- MENSAGEM -->
 
             <div class="message">
 
                 <h2>
-                    Um presente especial 💕
+                    Para uma pessoa muito especial 💌
                 </h2>
 
                 <p>
-                    Hoje é um dia especial para celebrar uma pessoa
-                    ainda mais especial.
+
+                    Gabi, esse pequeno site foi feito especialmente
+                    para comemorar o seu aniversário.
+
                     <br><br>
 
-                    Espero que seu aniversário seja cheio de momentos
-                    incríveis, risadas, sonhos realizados e pessoas
-                    que te façam feliz.
+                    Que esse novo ciclo seja cheio de momentos
+                    incríveis, risadas, sonhos realizados e muitas
+                    coisas boas.
+
                     <br><br>
 
-                    Feliz aniversário, Gabi! 🎉💖
+                    Espero que você goste desse pequeno presente. 💖
+
                 </p>
 
             </div>
@@ -269,148 +359,178 @@
 
             <!-- GALERIA -->
 
-            <div class="photos">
+            <div class="gallery-title">
+
+                <div class="small-title">
+                    ALGUMAS MEMÓRIAS 📸
+                </div>
 
                 <h2>
-                    Alguns momentos especiais 📸
+                    Momentos especiais
                 </h2>
-
-                <div class="gallery">
-
-                    <img src="foto1.jpeg"
-                         class="photo"
-                         alt="Foto especial 1">
-
-                    <img src="foto2.jpeg"
-                         class="photo"
-                         alt="Foto especial 2">
-
-                    <img src="foto3.jpeg"
-                         class="photo"
-                         alt="Foto especial 3">
-
-                    <img src="foto4.jpeg"
-                         class="photo"
-                         alt="Foto especial 4">
-
-                    <img src="foto5.jpeg"
-                         class="photo"
-                         alt="Foto especial 5">
-
-                    <img src="foto6.jpeg"
-                         class="photo"
-                         alt="Foto especial 6">
-
-                    <img src="foto7.jpeg"
-                         class="photo"
-                         alt="Foto especial 7">
-
-                </div>
 
             </div>
 
 
-            <!-- MENSAGEM FINAL -->
+            <div class="gallery">
 
-            <div class="final-message">
+                <img
+                    src="foto1.jpeg"
+                    class="photo"
+                    alt="Foto especial 1">
+
+                <img
+                    src="foto2.jpeg"
+                    class="photo"
+                    alt="Foto especial 2">
+
+                <img
+                    src="foto3.jpeg"
+                    class="photo"
+                    alt="Foto especial 3">
+
+                <img
+                    src="foto4.jpeg"
+                    class="photo"
+                    alt="Foto especial 4">
+
+                <img
+                    src="foto5.jpeg"
+                    class="photo"
+                    alt="Foto especial 5">
+
+                <img
+                    src="foto6.jpeg"
+                    class="photo"
+                    alt="Foto especial 6">
+
+                <img
+                    src="foto7.jpeg"
+                    class="photo"
+                    alt="Foto especial 7">
+
+            </div>
+
+
+            <!-- FINAL -->
+
+            <div class="final">
+
+                <div class="heart">
+                    💖
+                </div>
 
                 <h2>
-                    Que seu novo ciclo seja incrível! ✨
+                    Feliz aniversário, Gabi!
                 </h2>
 
                 <p>
-                    Que nunca faltem motivos para sorrir,
-                    pessoas especiais ao seu lado e muitos momentos
-                    inesquecíveis.
-                    <br><br>
+                    Que seu dia seja incrível e que esse novo ciclo
+                    traga muitos momentos inesquecíveis. ✨
+                </p>
 
-                    Você merece tudo de bom. 💗
+                <p class="signature">
+                    Com carinho 💕
                 </p>
 
             </div>
-
-            <footer>
-                Feito com carinho especialmente para você 💕
-            </footer>
 
         </section>
 
     </div>
 
 
-    <!-- MÚSICA -->
+    <!-- =========================
+         ÁUDIO
+    ========================= -->
 
-    <!--
-        Coloque seu arquivo de áudio permitido como:
-        musica.mp3
+    <audio
+        id="musica"
+        loop
+        preload="auto">
 
-        na raiz do repositório, junto com este index.html.
-    -->
+        <source
+            src="musica.mp3"
+            type="audio/mpeg">
 
-    <audio id="musica" loop preload="auto">
-        <source src="musica.mp3" type="audio/mpeg">
     </audio>
+
+
+    <!-- BOTÃO DE CONTROLE -->
 
     <button
         id="musicButton"
-        class="music-button"
-        onclick="alternarMusica()"
-        style="display:none;">
+        onclick="alternarMusica()">
+
         🔊
+
     </button>
 
 
     <script>
 
-        function abrirSurpresa() {
+        const musica = document.getElementById("musica");
+        const surpresa = document.getElementById("surprise");
+        const musicButton = document.getElementById("musicButton");
 
-            const surpresa = document.getElementById("surprise");
-            const musica = document.getElementById("musica");
-            const botaoMusica = document.getElementById("musicButton");
+
+        function abrirSurpresa() {
 
             /* Mostra o conteúdo */
 
             surpresa.style.display = "block";
 
-            /* Mostra botão da música */
 
-            botaoMusica.style.display = "block";
+            /* Mostra o botão da música */
 
-            /* Tenta iniciar a música */
+            musicButton.style.display = "block";
 
-            musica.play().catch(function() {
-                console.log("O navegador bloqueou a reprodução automática.");
-            });
 
-            /* Desce suavemente até a surpresa */
+            /*
+             * Como essa função é chamada pelo clique
+             * do usuário, o navegador normalmente permite
+             * iniciar o áudio.
+             */
 
-            setTimeout(function() {
+            musica.play()
+                .then(() => {
+
+                    musicButton.innerHTML = "🔊";
+
+                })
+                .catch(() => {
+
+                    musicButton.innerHTML = "🎵";
+
+                });
+
+
+            /* Desce até a surpresa */
+
+            setTimeout(() => {
 
                 surpresa.scrollIntoView({
                     behavior: "smooth"
                 });
 
-            }, 150);
+            }, 100);
 
         }
 
 
         function alternarMusica() {
 
-            const musica = document.getElementById("musica");
-            const botao = document.getElementById("musicButton");
-
             if (musica.paused) {
 
                 musica.play();
 
-                botao.innerHTML = "🔊";
+                musicButton.innerHTML = "🔊";
 
             } else {
 
                 musica.pause();
 
-                botao.innerHTML = "🔇";
+                musicButton.innerHTML = "🔇";
 
             }
 
@@ -419,4 +539,5 @@
     </script>
 
 </body>
+
 </html>
